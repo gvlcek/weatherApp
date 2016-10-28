@@ -49,10 +49,9 @@ class obtainForecast {
             if let list = redeableJSON["list"] {
                 //print(list)
                 
-                
                 for i in 0..<list.count {
                     let item = list[i] as! [String : AnyObject]
-                    //print(item["temp"])
+                    print(item["temp"])                    
                 }
                 
             }
