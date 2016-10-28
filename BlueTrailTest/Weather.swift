@@ -30,6 +30,8 @@ class weatherForecast {
     }
 }
 
+let forecasts = [weatherForecast]()
+
 class obtainForecast {
     
     func callAlamo(url: String){
@@ -45,7 +47,12 @@ class obtainForecast {
             //print(redeableJSON)
             
             if let list = redeableJSON["list"] {
-                print(list)
+                //print(list)
+                for i in 0..<list.count {
+                    let item = list[i] as! [String : AnyObject]
+                    print(item["temp"])
+                }
+                
             }
             
         }
