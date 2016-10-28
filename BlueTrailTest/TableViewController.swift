@@ -6,8 +6,6 @@
 //  Copyright © 2016 Vlcek Guadalupe. All rights reserved.
 //
 
-/* API http://api.openweathermap.org/data/2.5/forecast/daily?q=buenos%20aires&mode=json&units=metric&APPID=3d7fafd6fbae7ba96a7b3fa31bd0ce6b */
-
 import UIKit
 
 class TableViewController: UITableViewController {
