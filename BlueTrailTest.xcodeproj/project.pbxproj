@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17F735C575DBB4BF93E3E9F3 /* Pods_BlueTrailTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926874FF7F767A26B497B29A /* Pods_BlueTrailTestTests.framework */; };
+		3240B93F8A7D04105C5C94C1 /* Pods_BlueTrailTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F021EAF8AA5B0A127E0FEC69 /* Pods_BlueTrailTestUITests.framework */; };
+		481698FC6E96656896345E3C /* Pods_BlueTrailTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8283BC16C6AA518195E7B6C1 /* Pods_BlueTrailTest.framework */; };
+		DD04BF741DC2E85C00A201F4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD04BF731DC2E85C00A201F4 /* TableViewController.swift */; };
+		DD04BF761DC2ECAF00A201F4 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD04BF751DC2ECAF00A201F4 /* WeatherData.swift */; };
 		DD4DD1DC1DC2DE65004640F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4DD1DB1DC2DE65004640F6 /* AppDelegate.swift */; };
 		DD4DD1DE1DC2DE65004640F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4DD1DD1DC2DE65004640F6 /* ViewController.swift */; };
 		DD4DD1E11DC2DE65004640F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4DD1DF1DC2DE65004640F6 /* Main.storyboard */; };
@@ -34,6 +39,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		064CF2CE5489097905550768 /* Pods-BlueTrailTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueTrailTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueTrailTestTests/Pods-BlueTrailTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8283BC16C6AA518195E7B6C1 /* Pods_BlueTrailTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueTrailTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		926874FF7F767A26B497B29A /* Pods_BlueTrailTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueTrailTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD269C9873677EDF39B9D60F /* Pods-BlueTrailTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueTrailTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueTrailTestUITests/Pods-BlueTrailTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D73CAC5F99332295BEC248AF /* Pods-BlueTrailTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueTrailTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueTrailTest/Pods-BlueTrailTest.debug.xcconfig"; sourceTree = "<group>"; };
+		DA738038A3BD61D043546A5B /* Pods-BlueTrailTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueTrailTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueTrailTestUITests/Pods-BlueTrailTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC467921E3321B01DD220410 /* Pods-BlueTrailTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueTrailTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueTrailTestTests/Pods-BlueTrailTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		DD04BF731DC2E85C00A201F4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		DD04BF751DC2ECAF00A201F4 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		DD4DD1D81DC2DE65004640F6 /* BlueTrailTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueTrailTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4DD1DB1DC2DE65004640F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD4DD1DD1DC2DE65004640F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +61,8 @@
 		DD4DD1F71DC2DE65004640F6 /* BlueTrailTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlueTrailTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4DD1FB1DC2DE65004640F6 /* BlueTrailTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueTrailTestUITests.swift; sourceTree = "<group>"; };
 		DD4DD1FD1DC2DE65004640F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F021EAF8AA5B0A127E0FEC69 /* Pods_BlueTrailTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueTrailTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCAC7F9D4EC8A291CC098E55 /* Pods-BlueTrailTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueTrailTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueTrailTest/Pods-BlueTrailTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				481698FC6E96656896345E3C /* Pods_BlueTrailTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F735C575DBB4BF93E3E9F3 /* Pods_BlueTrailTestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +86,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3240B93F8A7D04105C5C94C1 /* Pods_BlueTrailTestUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FE1C5AF67FA0373027311F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D73CAC5F99332295BEC248AF /* Pods-BlueTrailTest.debug.xcconfig */,
+				FCAC7F9D4EC8A291CC098E55 /* Pods-BlueTrailTest.release.xcconfig */,
+				064CF2CE5489097905550768 /* Pods-BlueTrailTestTests.debug.xcconfig */,
+				DC467921E3321B01DD220410 /* Pods-BlueTrailTestTests.release.xcconfig */,
+				DA738038A3BD61D043546A5B /* Pods-BlueTrailTestUITests.debug.xcconfig */,
+				CD269C9873677EDF39B9D60F /* Pods-BlueTrailTestUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A1CEFC73AF61D951246F5ED4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8283BC16C6AA518195E7B6C1 /* Pods_BlueTrailTest.framework */,
+				926874FF7F767A26B497B29A /* Pods_BlueTrailTestTests.framework */,
+				F021EAF8AA5B0A127E0FEC69 /* Pods_BlueTrailTestUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DD4DD1CF1DC2DE65004640F6 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +123,8 @@
 				DD4DD1EF1DC2DE65004640F6 /* BlueTrailTestTests */,
 				DD4DD1FA1DC2DE65004640F6 /* BlueTrailTestUITests */,
 				DD4DD1D91DC2DE65004640F6 /* Products */,
+				2FE1C5AF67FA0373027311F4 /* Pods */,
+				A1CEFC73AF61D951246F5ED4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +143,8 @@
 			children = (
 				DD4DD1DB1DC2DE65004640F6 /* AppDelegate.swift */,
 				DD4DD1DD1DC2DE65004640F6 /* ViewController.swift */,
+				DD04BF731DC2E85C00A201F4 /* TableViewController.swift */,
+				DD04BF751DC2ECAF00A201F4 /* WeatherData.swift */,
 				DD4DD1DF1DC2DE65004640F6 /* Main.storyboard */,
 				DD4DD1E21DC2DE65004640F6 /* Assets.xcassets */,
 				DD4DD1E41DC2DE65004640F6 /* LaunchScreen.storyboard */,
@@ -132,9 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD4DD2001DC2DE65004640F6 /* Build configuration list for PBXNativeTarget "BlueTrailTest" */;
 			buildPhases = (
+				AA55241ED5216F0EE5307C5A /* [CP] Check Pods Manifest.lock */,
 				DD4DD1D41DC2DE65004640F6 /* Sources */,
 				DD4DD1D51DC2DE65004640F6 /* Frameworks */,
 				DD4DD1D61DC2DE65004640F6 /* Resources */,
+				F43451EC071A75CF684B7CDD /* [CP] Embed Pods Frameworks */,
+				B65B9C1458C0487C511F6531 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD4DD2031DC2DE65004640F6 /* Build configuration list for PBXNativeTarget "BlueTrailTestTests" */;
 			buildPhases = (
+				43603317DC7FA9746018BE31 /* [CP] Check Pods Manifest.lock */,
 				DD4DD1E81DC2DE65004640F6 /* Sources */,
 				DD4DD1E91DC2DE65004640F6 /* Frameworks */,
 				DD4DD1EA1DC2DE65004640F6 /* Resources */,
+				60C094FE37573ABF7909A5B4 /* [CP] Embed Pods Frameworks */,
+				86F484A56DB26573569F8CDF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD4DD2061DC2DE65004640F6 /* Build configuration list for PBXNativeTarget "BlueTrailTestUITests" */;
 			buildPhases = (
+				C94783B9A955B17E3ECE7D28 /* [CP] Check Pods Manifest.lock */,
 				DD4DD1F31DC2DE65004640F6 /* Sources */,
 				DD4DD1F41DC2DE65004640F6 /* Frameworks */,
 				DD4DD1F51DC2DE65004640F6 /* Resources */,
+				E5014461BA661580E6E05B41 /* [CP] Embed Pods Frameworks */,
+				E6C8F41E835320C4818A195D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,12 +312,152 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		43603317DC7FA9746018BE31 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		60C094FE37573ABF7909A5B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueTrailTestTests/Pods-BlueTrailTestTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86F484A56DB26573569F8CDF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueTrailTestTests/Pods-BlueTrailTestTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA55241ED5216F0EE5307C5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B65B9C1458C0487C511F6531 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueTrailTest/Pods-BlueTrailTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C94783B9A955B17E3ECE7D28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E5014461BA661580E6E05B41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueTrailTestUITests/Pods-BlueTrailTestUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6C8F41E835320C4818A195D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueTrailTestUITests/Pods-BlueTrailTestUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F43451EC071A75CF684B7CDD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueTrailTest/Pods-BlueTrailTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DD4DD1D41DC2DE65004640F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DD4DD1DE1DC2DE65004640F6 /* ViewController.swift in Sources */,
+				DD04BF741DC2E85C00A201F4 /* TableViewController.swift in Sources */,
+				DD04BF761DC2ECAF00A201F4 /* WeatherData.swift in Sources */,
 				DD4DD1DC1DC2DE65004640F6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +531,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -385,6 +581,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -411,7 +608,9 @@
 		};
 		DD4DD2011DC2DE65004640F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D73CAC5F99332295BEC248AF /* Pods-BlueTrailTest.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 363T9DTZQA;
 				INFOPLIST_FILE = BlueTrailTest/Info.plist;
@@ -424,7 +623,9 @@
 		};
 		DD4DD2021DC2DE65004640F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCAC7F9D4EC8A291CC098E55 /* Pods-BlueTrailTest.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 363T9DTZQA;
 				INFOPLIST_FILE = BlueTrailTest/Info.plist;
@@ -437,6 +638,7 @@
 		};
 		DD4DD2041DC2DE65004640F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 064CF2CE5489097905550768 /* Pods-BlueTrailTestTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -452,6 +654,7 @@
 		};
 		DD4DD2051DC2DE65004640F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC467921E3321B01DD220410 /* Pods-BlueTrailTestTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -467,6 +670,7 @@
 		};
 		DD4DD2071DC2DE65004640F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA738038A3BD61D043546A5B /* Pods-BlueTrailTestUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 363T9DTZQA;
@@ -481,6 +685,7 @@
 		};
 		DD4DD2081DC2DE65004640F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD269C9873677EDF39B9D60F /* Pods-BlueTrailTestUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 363T9DTZQA;
@@ -512,6 +717,7 @@
 				DD4DD2021DC2DE65004640F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD4DD2031DC2DE65004640F6 /* Build configuration list for PBXNativeTarget "BlueTrailTestTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +726,7 @@
 				DD4DD2051DC2DE65004640F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD4DD2061DC2DE65004640F6 /* Build configuration list for PBXNativeTarget "BlueTrailTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +735,7 @@
 				DD4DD2081DC2DE65004640F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

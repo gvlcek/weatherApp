@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DD4DD1D71DC2DE65004640F6"
+               BuildableName = "BlueTrailTest.app"
+               BlueprintName = "BlueTrailTest"
+               ReferencedContainer = "container:BlueTrailTest.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DD4DD1EB1DC2DE65004640F6"
+               BuildableName = "BlueTrailTestTests.xctest"
+               BlueprintName = "BlueTrailTestTests"
+               ReferencedContainer = "container:BlueTrailTest.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DD4DD1F61DC2DE65004640F6"
+               BuildableName = "BlueTrailTestUITests.xctest"
+               BlueprintName = "BlueTrailTestUITests"
+               ReferencedContainer = "container:BlueTrailTest.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DD4DD1D71DC2DE65004640F6"
+            BuildableName = "BlueTrailTest.app"
+            BlueprintName = "BlueTrailTest"
+            ReferencedContainer = "container:BlueTrailTest.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DD4DD1D71DC2DE65004640F6"
+            BuildableName = "BlueTrailTest.app"
+            BlueprintName = "BlueTrailTest"
+            ReferencedContainer = "container:BlueTrailTest.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DD4DD1D71DC2DE65004640F6"
+            BuildableName = "BlueTrailTest.app"
+            BlueprintName = "BlueTrailTest"
+            ReferencedContainer = "container:BlueTrailTest.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
