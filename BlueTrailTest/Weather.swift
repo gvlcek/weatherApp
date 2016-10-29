@@ -68,10 +68,7 @@ var days = [weatherForecast]()
         }
         
         for i in 0..<days.count {
-            print(days[i].state)
+            print(days[i].state, days[i].temperature, days[i].min, days[i].max)
         }
     }
-    
-    
-    
 }
