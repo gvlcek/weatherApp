@@ -12,27 +12,21 @@ import Alamofire
 
 class weatherForecast {
     let temperature: Double
-    let date: Date
     let min: Double
     let max: Double
     let state: String
-    let iconState: String
     
-    lazy var icon: UIImage = { return UIImage(named: self.iconState)! }()
-    
-    init(temperature: Double, date: Date, min: Double, max: Double, state: String, iconState: String) {
+    init(temperature: Double, min: Double, max: Double, state: String) {
         self.temperature = temperature
-        self.date        = date
         self.min         = min
         self.max         = max
         self.state       = state
-        self.iconState   = iconState
     }
 }
 
 class obtainForecast {
 
-var myArray: [AnyObject] = [ ]
+var days = [weatherForecast]()
     
     func callAlamo(url: String){
         Alamofire.request(url).responseJSON(completionHandler: {
@@ -44,37 +38,40 @@ var myArray: [AnyObject] = [ ]
     func parseData(JSONData: Data) {
         do {
             let redeableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! [String : AnyObject]
-            //print(redeableJSON)
             
             if let list = redeableJSON["list"] {
-                //print(list)
                 
                 for i in 0..<list.count {
                     let item = list[i] as! [String : AnyObject]
-                    //print(item["temp"])
                     
                     let temp = item["temp"]
-                    
+
                     let day = temp?["day"]
                     let min = temp?["min"]
                     let max = temp?["max"]
                     
-                    if let weather = item["weather"] {
-                        let asd = weather[0] as! [String : AnyObject]
-                        let description = asd["description"]
-                        //print(description)
+                    if let weathers = item["weather"] {
+                        let weather = weathers[0] as! [String : AnyObject]
+                        let description = weather["description"]
                     
-                        print("Temperature: \(day!!)  Min: \(min!!) Max: \(max!!) Description: \(description!)")
+                        //print("Temperature: \(day!!) | Min: \(min!!) | Max: \(max!!) | Description: \(description!)")
+                        
+                        let w = weatherForecast(temperature: day!! as! Double, min: min!! as! Double, max: max!! as! Double, state: description! as! String)
+                        
+                        days.append(w)
                     }
                 }
-                
             }
-            
         }
         catch{
             print(error)
         }
         
+        for i in 0..<days.count {
+            print(days[i].state)
+        }
     }
+    
+    
     
 }
