@@ -9,7 +9,11 @@
 import UIKit
 import Alamofire
 
+
+
 class TableViewController: UITableViewController {
+    
+    @IBOutlet weak var headerLabel: UILabel!
     
     let apiURL = "http://api.openweathermap.org/data/2.5/forecast/daily?q=buenos%20aires&mode=json&units=metric&APPID=3d7fafd6fbae7ba96a7b3fa31bd0ce6b"
     
@@ -35,8 +39,20 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Identifier")
-        cell?.textLabel?.text = String(days[indexPath.row].temperature)
-        cell?.detailTextLabel?.text = days[indexPath.row].state
+        
+        //let dayLabel = cell?.viewWithTag(1) as! UILabel
+        let tempLabel = cell?.viewWithTag(2) as! UILabel
+        tempLabel.text = String(days[indexPath.row].temperature) + "°C"
+        
+        let statusLabel = cell?.viewWithTag(3) as! UILabel
+        statusLabel.text = days[indexPath.row].state
+        
+        let maxLabel = cell?.viewWithTag(4) as! UILabel
+        maxLabel.text = "Max " + String(days[indexPath.row].max)
+        
+        let minLabel = cell?.viewWithTag(5) as! UILabel
+        minLabel.text = "Min " + String(days[indexPath.row].min)
+        
         return cell!
     }
 
