@@ -24,14 +24,12 @@ class weatherForecast {
     }
 }
 
-class obtainForecast {
-
 var days = [weatherForecast]()
     
     func callAlamo(url: String){
         Alamofire.request(url).responseJSON(completionHandler: {
             response in
-            self.parseData(JSONData: response.data!)
+            parseData(JSONData: response.data!)
         })
     }
     
@@ -53,8 +51,6 @@ var days = [weatherForecast]()
                     if let weathers = item["weather"] {
                         let weather = weathers[0] as! [String : AnyObject]
                         let description = weather["description"]
-                    
-                        //print("Temperature: \(day!!) | Min: \(min!!) | Max: \(max!!) | Description: \(description!)")
                         
                         let w = weatherForecast(temperature: day!! as! Double, min: min!! as! Double, max: max!! as! Double, state: description! as! String)
                         
@@ -66,9 +62,5 @@ var days = [weatherForecast]()
         catch{
             print(error)
         }
-        
-        for i in 0..<days.count {
-            print(days[i].state, days[i].temperature, days[i].min, days[i].max)
-        }
+
     }
-}
