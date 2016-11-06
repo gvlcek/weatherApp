@@ -36,9 +36,8 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Identifier")
-        
-        cell?.textLabel?.text = String(days[indexPath.row].temperature) + " " + days[indexPath.row].state
-        
+        cell?.textLabel?.text = String(days[indexPath.row].temperature)
+        cell?.detailTextLabel?.text = days[indexPath.row].state
         return cell!
     }
 
