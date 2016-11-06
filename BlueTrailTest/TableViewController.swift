@@ -6,7 +6,6 @@
 //  Copyright © 2016 Vlcek Guadalupe. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import Alamofire
 

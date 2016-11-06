@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Alamofire
 
 class weatherForecast {
     let temperature: Double
@@ -25,13 +24,6 @@ class weatherForecast {
 }
 
 var days = [weatherForecast]()
-    
-    func callAlamo(url: String){
-        Alamofire.request(url).responseJSON(completionHandler: {
-            response in
-            parseData(JSONData: response.data!)
-        })
-    }
     
     func parseData(JSONData: Data) {
         do {
