@@ -9,8 +9,6 @@
 import UIKit
 import Alamofire
 
-
-
 class TableViewController: UITableViewController {
     
     @IBOutlet weak var headerLabel: UILabel!
@@ -24,6 +22,7 @@ class TableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+            self.headerLabel.text = "Weather in " + city + ", " + country
         })
     }
     
@@ -40,7 +39,14 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Identifier")
         
-        //let dayLabel = cell?.viewWithTag(1) as! UILabel
+        let dateFormatter = DateFormatter()
+        let date = Date()
+        dateFormatter.locale = Locale.current
+        dateFormatter.setLocalizedDateFormatFromTemplate("ed")
+        
+        let dayLabel = cell?.viewWithTag(1) as! UILabel
+        dayLabel.text = dateFormatter.string(from: date)
+        
         let tempLabel = cell?.viewWithTag(2) as! UILabel
         tempLabel.text = String(days[indexPath.row].temperature) + "°C"
         

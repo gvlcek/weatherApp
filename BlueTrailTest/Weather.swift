@@ -24,10 +24,20 @@ class weatherForecast {
 }
 
 var days = [weatherForecast]()
-    
+var country = String()
+var city = String()
+
     func parseData(JSONData: Data) {
         do {
             let redeableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! [String : AnyObject]
+            
+            if let ci = redeableJSON["city"] {
+                let co = ci["country"]
+                let name = ci["name"]
+                country = co! as! String
+                city = name! as! String
+                
+            }
             
             if let list = redeableJSON["list"] {
                 
