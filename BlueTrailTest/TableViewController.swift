@@ -15,12 +15,6 @@ class TableViewController: UITableViewController {
     
     let apiURL = "http://api.openweathermap.org/data/2.5/forecast/daily?q=buenos%20aires&mode=json&units=metric&APPID=3d7fafd6fbae7ba96a7b3fa31bd0ce6b"
     
-    let clocale = Locale.current.usesMetricSystem
-    
-    func convertirCaF(tcelsius: Double) -> Double {
-        return (tcelsius * 1.8) + 32
-    }
-    
     func callAlamo(url: String){
         Alamofire.request(url).responseJSON(completionHandler: {
             response in

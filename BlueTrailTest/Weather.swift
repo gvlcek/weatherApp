@@ -38,7 +38,6 @@ var city = String()
                 let name = ci["name"]
                 country = co! as! String
                 city = name! as! String
-                
             }
             
             if let list = redeableJSON["list"] {
