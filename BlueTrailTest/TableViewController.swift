@@ -15,6 +15,12 @@ class TableViewController: UITableViewController {
     
     let apiURL = "http://api.openweathermap.org/data/2.5/forecast/daily?q=buenos%20aires&mode=json&units=metric&APPID=3d7fafd6fbae7ba96a7b3fa31bd0ce6b"
     
+    let clocale = Locale.current.usesMetricSystem
+    
+    func convertirCaF(tcelsius: Double) -> Double {
+        return (tcelsius * 1.8) + 32
+    }
+    
     func callAlamo(url: String){
         Alamofire.request(url).responseJSON(completionHandler: {
             response in
@@ -43,16 +49,31 @@ class TableViewController: UITableViewController {
         dayLabel.text =  days[indexPath.row].date
         
         let tempLabel = cell?.viewWithTag(2) as! UILabel
+        if (clocale == true) {
         tempLabel.text = String(days[indexPath.row].temperature) + "°C"
+        }
+        else {
+            tempLabel.text = String(format:"%.02f", convertirCaF(tcelsius: days[indexPath.row].temperature)) + "°F"
+        }
         
         let statusLabel = cell?.viewWithTag(3) as! UILabel
         statusLabel.text = days[indexPath.row].state
         
         let maxLabel = cell?.viewWithTag(4) as! UILabel
-        maxLabel.text = "Max " + String(days[indexPath.row].max)
+        if (clocale == true) {
+            maxLabel.text = "Max " + String(days[indexPath.row].max)
+        }
+        else {
+            maxLabel.text = "Max " + String(format:"%.02f", convertirCaF(tcelsius: days[indexPath.row].max))
+        }
         
         let minLabel = cell?.viewWithTag(5) as! UILabel
-        minLabel.text = "Min " + String(days[indexPath.row].min)
+        if (clocale == true) {
+            minLabel.text = "Min " + String(days[indexPath.row].min)
+        }
+        else {
+            minLabel.text = "Min " + String(format:"%.02f", convertirCaF(tcelsius: days[indexPath.row].min))
+        }
         
         return cell!
     }
