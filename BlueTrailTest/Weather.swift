@@ -14,12 +14,14 @@ class weatherForecast {
     let min: Double
     let max: Double
     let state: String
+    let date:  String
     
-    init(temperature: Double, min: Double, max: Double, state: String) {
+    init(temperature: Double, min: Double, max: Double, state: String, date: String) {
         self.temperature = temperature
         self.min         = min
         self.max         = max
         self.state       = state
+        self.date        = date
     }
 }
 
@@ -41,7 +43,16 @@ var city = String()
             
             if let list = redeableJSON["list"] {
                 
+                var dateC = Date()
+                
                 for i in 0..<list.count {
+                    let dateFormatter = DateFormatter()
+                    if (i > 0) {
+                        dateC = dateC.addingTimeInterval(86400)
+                    }
+                    dateFormatter.locale = Locale.current
+                    dateFormatter.setLocalizedDateFormatFromTemplate("ed")
+                    
                     let item = list[i] as! [String : AnyObject]
                     
                     let temp = item["temp"]
@@ -54,7 +65,7 @@ var city = String()
                         let weather = weathers[0] as! [String : AnyObject]
                         let description = weather["description"]
                         
-                        let w = weatherForecast(temperature: day!! as! Double, min: min!! as! Double, max: max!! as! Double, state: description! as! String)
+                        let w = weatherForecast(temperature: day!! as! Double, min: min!! as! Double, max: max!! as! Double, state: description! as! String, date: dateFormatter.string(from: dateC) as String)
                         
                         days.append(w)
                     }

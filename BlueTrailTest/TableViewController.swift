@@ -39,13 +39,8 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Identifier")
         
-        let dateFormatter = DateFormatter()
-        let date = Date()
-        dateFormatter.locale = Locale.current
-        dateFormatter.setLocalizedDateFormatFromTemplate("ed")
-        
         let dayLabel = cell?.viewWithTag(1) as! UILabel
-        dayLabel.text = dateFormatter.string(from: date)
+        dayLabel.text =  days[indexPath.row].date
         
         let tempLabel = cell?.viewWithTag(2) as! UILabel
         tempLabel.text = String(days[indexPath.row].temperature) + "°C"
