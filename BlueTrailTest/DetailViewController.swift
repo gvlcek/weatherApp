@@ -27,8 +27,9 @@ class DetailViewController: UIViewController {
     
     var weatherForecast: WeatherForecast!
     
+    var shareWeather: UIActivityViewController!
+    
     override func viewDidLoad() {
-
         dateFormatter.locale = Locale.current
         dateFormatter.dateStyle = .full
         dateLabel.text = dateFormatter.string(from: weatherForecast.date)
@@ -38,7 +39,6 @@ class DetailViewController: UIViewController {
             statusLabel.text = weatherForecast.state
             maxLabel.text = "Max " + String(weatherForecast.max)
             minLabel.text = "Min " + String(weatherForecast.min)
-            
         }
         else {
             tempLabel.text = String(format:"%.00f", weatherForecast.temperature) + "°F"
@@ -55,8 +55,13 @@ class DetailViewController: UIViewController {
         pressureLabel.text = "Pressure " + String(weatherForecast.pressure) + " hPa"
         cloudsLabel.text = "Clouds " + String(weatherForecast.clouds)
         speedLabel.text = "Speed " + String(weatherForecast.speed)
-        
-        
+    }
+    
+    @IBAction func shareButton(_ sender: UIButton) {
+        dateFormatter.dateStyle = .short
+        let shareText = dateFormatter.string(from: weatherForecast.date) + " forecast in " + city + ": " + tempLabel.text! + " " + statusLabel.text!
+        shareWeather = UIActivityViewController(activityItems: [shareText as NSString], applicationActivities: nil)
+        present(shareWeather, animated: true, completion: nil)
     }
     
 }
