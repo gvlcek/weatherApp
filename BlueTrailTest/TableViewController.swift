@@ -39,7 +39,9 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Identifier")
         
         let dayLabel = cell?.viewWithTag(1) as! UILabel
-        dayLabel.text =  days[indexPath.row].date
+        dateFormatter.locale = Locale.current
+        dateFormatter.setLocalizedDateFormatFromTemplate("ed")
+        dayLabel.text = dateFormatter.string(from: days[indexPath.row].date)
         
         let statusLabel = cell?.viewWithTag(3) as! UILabel
         statusLabel.text = days[indexPath.row].state

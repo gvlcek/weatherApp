@@ -27,11 +27,24 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
 
-        tempLabel.text = String(weatherForecast.temperature)
-        statusLabel.text = weatherForecast.state
-        dateLabel.text = weatherForecast.date
-        maxLabel.text = String(weatherForecast.max)
-        minLabel.text = String(weatherForecast.min)
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateStyle = .full
+        dateLabel.text = dateFormatter.string(from: weatherForecast.date)
+        
+        if (clocale == true) {
+            tempLabel.text = String(weatherForecast.temperature) + "°C"
+            statusLabel.text = weatherForecast.state
+            maxLabel.text = "Max " + String(weatherForecast.max)
+            minLabel.text = "Min " + String(weatherForecast.min)
+        }
+        else {
+            tempLabel.text = String(format:"%.00f", weatherForecast.temperature) + "°F"
+            statusLabel.text = weatherForecast.state
+            maxLabel.text = "Max " + String(format:"%.00f", weatherForecast.max)
+            minLabel.text = "Min " + String(format:"%.00f", weatherForecast.min)
+        }
+        
+        
     }
     
 }

@@ -14,9 +14,9 @@ class WeatherForecast {
     var min: Double
     var max: Double
     var state: String
-    var date:  String
+    var date:  Date
     
-    init(temperature: Double, min: Double, max: Double, state: String, date: String) {
+    init(temperature: Double, min: Double, max: Double, state: String, date: Date) {
         self.temperature = temperature
         self.min         = min
         self.max         = max
@@ -48,12 +48,9 @@ var city = String()
                 var dateC = Date()
                 
                 for i in 0..<list.count {
-                    let dateFormatter = DateFormatter()
                     if (i > 0) {
                         dateC = dateC.addingTimeInterval(86400)
                     }
-                    dateFormatter.locale = Locale.current
-                    dateFormatter.setLocalizedDateFormatFromTemplate("ed")
                     
                     let item = list[i] as! [String : AnyObject]
                     
@@ -67,7 +64,7 @@ var city = String()
                         let weather = weathers[0] as! [String : AnyObject]
                         let description = weather["description"]
                         
-                        let w = WeatherForecast(temperature: day!! as! Double, min: min!! as! Double, max: max!! as! Double, state: description! as! String, date: dateFormatter.string(from: dateC) as String)
+                        let w = WeatherForecast(temperature: day!! as! Double, min: min!! as! Double, max: max!! as! Double, state: description! as! String, date: dateC as Date)
                         
                         days.append(w)
                     }

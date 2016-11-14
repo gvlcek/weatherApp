@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+let dateFormatter = DateFormatter()
+
 let clocale = Locale.current.usesMetricSystem
 
 func convertCtF(tcelsius: Double) -> Double {
