@@ -52,7 +52,7 @@ class DetailViewController: UIViewController {
         nightLabel.text = "Night " + String(format:"%.02f", weatherForecast.night)
         
         humidityLabel.text = "Humidity " + String(weatherForecast.humidity) + "%"
-        pressureLabel.text = "Pressure " + String(weatherForecast.pressure) + "hPa"
+        pressureLabel.text = "Pressure " + String(weatherForecast.pressure) + " hPa"
         cloudsLabel.text = "Clouds " + String(weatherForecast.clouds)
         speedLabel.text = "Speed " + String(weatherForecast.speed)
         
