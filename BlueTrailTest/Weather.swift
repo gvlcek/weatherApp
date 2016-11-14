@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-class weatherForecast {
+class WeatherForecast {
     var temperature: Double
-    let min: Double
-    let max: Double
-    let state: String
-    let date:  String
+    var min: Double
+    var max: Double
+    var state: String
+    var date:  String
     
     init(temperature: Double, min: Double, max: Double, state: String, date: String) {
         self.temperature = temperature
@@ -25,14 +25,14 @@ class weatherForecast {
     }
 }
 
-var days = [weatherForecast]()
+var days = [WeatherForecast]()
 var country = String()
 var city = String()
 
     func parseData(JSONData: Data) {
         do {
             
-            days = [weatherForecast]()
+            days = [WeatherForecast]()
             
             let redeableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! [String : AnyObject]
             
@@ -67,9 +67,17 @@ var city = String()
                         let weather = weathers[0] as! [String : AnyObject]
                         let description = weather["description"]
                         
-                        let w = weatherForecast(temperature: day!! as! Double, min: min!! as! Double, max: max!! as! Double, state: description! as! String, date: dateFormatter.string(from: dateC) as String)
+                        let w = WeatherForecast(temperature: day!! as! Double, min: min!! as! Double, max: max!! as! Double, state: description! as! String, date: dateFormatter.string(from: dateC) as String)
                         
                         days.append(w)
+                    }
+                }
+                
+                if (clocale != true) {
+                    for i in 0..<days.count {
+                        days[i].temperature = convertCtF(tcelsius: days[i].temperature)
+                        days[i].max = convertCtF(tcelsius: days[i].max)
+                        days[i].min = convertCtF(tcelsius: days[i].min)
                     }
                 }
             }

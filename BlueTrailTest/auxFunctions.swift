@@ -11,6 +11,6 @@ import UIKit
 
 let clocale = Locale.current.usesMetricSystem
 
-func convertirCaF(tcelsius: Double) -> Double {
+func convertCtF(tcelsius: Double) -> Double {
     return (tcelsius * 1.8) + 32
 }

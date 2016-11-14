@@ -41,23 +41,23 @@ class TableViewController: UITableViewController {
         let dayLabel = cell?.viewWithTag(1) as! UILabel
         dayLabel.text =  days[indexPath.row].date
         
+        let statusLabel = cell?.viewWithTag(3) as! UILabel
+        statusLabel.text = days[indexPath.row].state
+        
         let tempLabel = cell?.viewWithTag(2) as! UILabel
         if (clocale == true) {
         tempLabel.text = String(days[indexPath.row].temperature) + "°C"
         }
         else {
-            tempLabel.text = String(format:"%.02f", convertirCaF(tcelsius: days[indexPath.row].temperature)) + "°F"
+            tempLabel.text = String(format:"%.00f", days[indexPath.row].temperature) + "°F"
         }
-        
-        let statusLabel = cell?.viewWithTag(3) as! UILabel
-        statusLabel.text = days[indexPath.row].state
         
         let maxLabel = cell?.viewWithTag(4) as! UILabel
         if (clocale == true) {
             maxLabel.text = "Max " + String(days[indexPath.row].max)
         }
         else {
-            maxLabel.text = "Max " + String(format:"%.02f", convertirCaF(tcelsius: days[indexPath.row].max))
+            maxLabel.text = "Max " + String(format:"%.00f", days[indexPath.row].max)
         }
         
         let minLabel = cell?.viewWithTag(5) as! UILabel
@@ -65,20 +65,21 @@ class TableViewController: UITableViewController {
             minLabel.text = "Min " + String(days[indexPath.row].min)
         }
         else {
-            minLabel.text = "Min " + String(format:"%.02f", convertirCaF(tcelsius: days[indexPath.row].min))
+            minLabel.text = "Min " + String(format:"%.00f", days[indexPath.row].min)
         }
         
         return cell!
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let
+            vc = segue.destination as? DetailViewController,
+            let cell = sender as? UITableViewCell,
+            let indexPath = tableView.indexPath(for: cell)
+            else { return }
         
-        let indexPath = self.tableView.indexPathForSelectedRow?.row
-        
-        let vc = segue.destination as! DetailViewController
-        
-        vc.temperature = String(days[indexPath!].temperature)
-        
+        let forecast: WeatherForecast = days[(indexPath as NSIndexPath).row]
+        vc.weatherForecast = forecast
     }
 
 }

@@ -23,13 +23,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var eveningLabel: UILabel!
     @IBOutlet weak var nightLabel: UILabel!
     
-    var temperature = String()
+    var weatherForecast: WeatherForecast!
     
     override func viewDidLoad() {
-        //super.viewDidLoad()
-        
-        tempLabel.text = temperature
 
+        tempLabel.text = String(weatherForecast.temperature)
+        statusLabel.text = weatherForecast.state
+        dateLabel.text = weatherForecast.date
+        maxLabel.text = String(weatherForecast.max)
+        minLabel.text = String(weatherForecast.min)
     }
     
 }
