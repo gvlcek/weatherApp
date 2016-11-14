@@ -31,7 +31,6 @@ class TableViewController: UITableViewController {
         callAlamo(url: apiURL)
     }
 
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return days.count
     }
@@ -71,15 +70,15 @@ class TableViewController: UITableViewController {
         
         return cell!
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        let indexPath = self.tableView.indexPathForSelectedRow?.row
+        
+        let vc = segue.destination as! DetailViewController
+        
+        vc.temperature = String(days[indexPath!].temperature)
+        
     }
-    */
 
 }

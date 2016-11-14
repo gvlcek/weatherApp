@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class weatherForecast {
-    let temperature: Double
+    var temperature: Double
     let min: Double
     let max: Double
     let state: String
@@ -31,6 +31,9 @@ var city = String()
 
     func parseData(JSONData: Data) {
         do {
+            
+            days = [weatherForecast]()
+            
             let redeableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! [String : AnyObject]
             
             if let ci = redeableJSON["city"] {

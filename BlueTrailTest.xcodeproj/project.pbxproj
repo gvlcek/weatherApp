@@ -19,6 +19,7 @@
 		DD4DD1F11DC2DE65004640F6 /* BlueTrailTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4DD1F01DC2DE65004640F6 /* BlueTrailTestTests.swift */; };
 		DD4DD1FC1DC2DE65004640F6 /* BlueTrailTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4DD1FB1DC2DE65004640F6 /* BlueTrailTestUITests.swift */; };
 		DD70BC6E1DD8D3E300499BCA /* auxFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD70BC6D1DD8D3E300499BCA /* auxFunctions.swift */; };
+		DD70BC701DD90C2B00499BCA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD70BC6F1DD90C2B00499BCA /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		DD4DD1FB1DC2DE65004640F6 /* BlueTrailTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueTrailTestUITests.swift; sourceTree = "<group>"; };
 		DD4DD1FD1DC2DE65004640F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD70BC6D1DD8D3E300499BCA /* auxFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = auxFunctions.swift; sourceTree = "<group>"; };
+		DD70BC6F1DD90C2B00499BCA /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F021EAF8AA5B0A127E0FEC69 /* Pods_BlueTrailTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueTrailTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCAC7F9D4EC8A291CC098E55 /* Pods-BlueTrailTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueTrailTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueTrailTest/Pods-BlueTrailTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +145,7 @@
 			children = (
 				DD4DD1DB1DC2DE65004640F6 /* AppDelegate.swift */,
 				DD04BF731DC2E85C00A201F4 /* TableViewController.swift */,
+				DD70BC6F1DD90C2B00499BCA /* DetailViewController.swift */,
 				DD04BF751DC2ECAF00A201F4 /* Weather.swift */,
 				DD70BC6D1DD8D3E300499BCA /* auxFunctions.swift */,
 				DD4DD1DF1DC2DE65004640F6 /* Main.storyboard */,
@@ -456,6 +459,7 @@
 			files = (
 				DD04BF741DC2E85C00A201F4 /* TableViewController.swift in Sources */,
 				DD04BF761DC2ECAF00A201F4 /* Weather.swift in Sources */,
+				DD70BC701DD90C2B00499BCA /* DetailViewController.swift in Sources */,
 				DD4DD1DC1DC2DE65004640F6 /* AppDelegate.swift in Sources */,
 				DD70BC6E1DD8D3E300499BCA /* auxFunctions.swift in Sources */,
 			);
