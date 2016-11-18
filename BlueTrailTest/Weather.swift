@@ -93,12 +93,12 @@ var city = String()
                         
                         let imageData = makeURL(icon: icon as! String)
                         
-                        let mainImageURL = URL(string: imageData)
-                        let mainImageData = NSData (contentsOf: mainImageURL!)
+                        let mainIconURL = URL(string: imageData)
+                        let mainIconData = NSData (contentsOf: mainIconURL!)
                         
-                        let mainImage = UIImage(data: mainImageData as! Data)
+                        let mainIcon = UIImage(data: mainIconData as! Data)
                         
-                        let w = WeatherForecast(temperature: day!! as! Double, min: min!! as! Double, max: max!! as! Double, state: description! as! String, date: dateC as Date, pressure: pressure! as! Double, humidity: humidity! as! Int, clouds: clouds! as! Int, speed: speed! as! Double, night: night!! as! Double, eve: eve!! as! Double, morn: morn!! as! Double, icon: mainImage as UIImage!)
+                        let w = WeatherForecast(temperature: day!! as! Double, min: min!! as! Double, max: max!! as! Double, state: description! as! String, date: dateC as Date, pressure: pressure! as! Double, humidity: humidity! as! Int, clouds: clouds! as! Int, speed: speed! as! Double, night: night!! as! Double, eve: eve!! as! Double, morn: morn!! as! Double, icon: mainIcon as UIImage!)
                         
                         days.append(w)
                     }

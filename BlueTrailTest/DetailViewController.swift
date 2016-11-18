@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var maxLabel: UILabel!
     @IBOutlet weak var minLabel: UILabel!
+    @IBOutlet weak var iconImage: UIImageView!
     
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
@@ -33,6 +34,8 @@ class DetailViewController: UIViewController {
         dateFormatter.locale = Locale.current
         dateFormatter.dateStyle = .full
         dateLabel.text = dateFormatter.string(from: weatherForecast.date)
+        
+        iconImage.image = weatherForecast.icon
         
         if (clocale == true) {
             tempLabel.text = String(weatherForecast.temperature) + "°C"
@@ -60,7 +63,7 @@ class DetailViewController: UIViewController {
     @IBAction func shareButton(_ sender: UIButton) {
         dateFormatter.dateStyle = .short
         let shareText = dateFormatter.string(from: weatherForecast.date) + " forecast in " + city + ": " + tempLabel.text! + " " + statusLabel.text!
-        shareWeather = UIActivityViewController(activityItems: [shareText as NSString], applicationActivities: nil)
+        shareWeather = UIActivityViewController(activityItems: [weatherForecast.icon, shareText as NSString], applicationActivities: nil)
         present(shareWeather, animated: true, completion: nil)
     }
     
