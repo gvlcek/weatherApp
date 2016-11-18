@@ -16,3 +16,7 @@ let clocale = Locale.current.usesMetricSystem
 func convertCtF(tcelsius: Double) -> Double {
     return (tcelsius * 1.8) + 32
 }
+
+func makeURL(icon: String) -> String {
+    return "http://www.openweathermap.org/img/w/" + icon + ".png"
+}

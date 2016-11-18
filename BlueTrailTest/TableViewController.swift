@@ -27,7 +27,7 @@ class TableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.rowHeight = UITableViewAutomaticDimension
         callAlamo(url: apiURL)
     }
 
@@ -69,6 +69,9 @@ class TableViewController: UITableViewController {
         else {
             minLabel.text = "Min " + String(format:"%.00f", days[indexPath.row].min)
         }
+        
+        let iconImage = cell?.viewWithTag(6) as! UIImageView
+        iconImage.image = days[indexPath.row].icon
         
         return cell!
     }
