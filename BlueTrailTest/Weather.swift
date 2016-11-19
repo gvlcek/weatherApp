@@ -59,7 +59,7 @@ var city = String()
                 city = name! as! String
             }
             
-            if let list = redeableJSON["list"] {
+            if let list = redeableJSON["list"] as? [[String: AnyObject]] {
                 
                 var dateC = Date()
                 
@@ -68,7 +68,7 @@ var city = String()
                         dateC = dateC.addingTimeInterval(86400)
                     }
                     
-                    let item = list[i] as! [String : AnyObject]
+                    let item = list[i]
                     
                     let pressure = item["pressure"]
                     let humidity = item["humidity"]
@@ -86,8 +86,8 @@ var city = String()
                     let eve = temp?["eve"]
                     let morn = temp?["morn"]
                     
-                    if let weathers = item["weather"] {
-                        let weather = weathers[0] as! [String : AnyObject]
+                    if let weathers = item["weather"] as? [[String : AnyObject]] {
+                        let weather = weathers[0]
                         let description = weather["description"]
                         let icon = weather["icon"]
                         
