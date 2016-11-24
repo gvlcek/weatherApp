@@ -26,8 +26,11 @@ class TableViewController: UITableViewController {
         })
     }
     
+    override func viewDidLoad() {
+        askPermission()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        //tableView.rowHeight = UITableViewAutomaticDimension
         callAlamo(url: apiURL)
     }
 

@@ -31,6 +31,9 @@ class DetailViewController: UIViewController {
     var shareWeather: UIActivityViewController!
     
     override func viewDidLoad() {
+        
+        //launchNotification()
+        
         dateFormatter.locale = Locale.current
         dateFormatter.dateStyle = .full
         dateLabel.text = dateFormatter.string(from: weatherForecast.date)
