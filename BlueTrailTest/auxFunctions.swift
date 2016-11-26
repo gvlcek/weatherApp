@@ -38,11 +38,14 @@ func makeDateTime(date: Date) -> DateComponents {
 }
 
 func launchNotification(notificationDate: Date){
+    
+    
     let localNotification = UNMutableNotificationContent()
     localNotification.title = "Weather forecast"
-    localNotification.body = "It looks like it will rain tomorrow ☔️"
+    localNotification.body = "It looks like it will rain on " + dateFormatter.string(from: notificationDate) + " ☔️"
+        
+    let chronoTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
     
-    let chronoTrigger = UNCalendarNotificationTrigger(dateMatching: makeDateTime(date: notificationDate), repeats: false)
     let request = UNNotificationRequest(identifier: "myNotification", content: localNotification, trigger: chronoTrigger)
     
     UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
