@@ -23,7 +23,6 @@ func makeURL(icon: String) -> String {
 func askPermission() {
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { (granted, error) in
         if granted {
-            //print("ok")
         } else {
             print(error?.localizedDescription as Any)
         }
@@ -34,6 +33,7 @@ func makeDateTime(date: Date) -> DateComponents {
     var dateComponents = Calendar.current.dateComponents([.day, .month, .year], from: date)
     dateComponents.hour =  8
     dateComponents.minute = 0
+    
     return dateComponents
 }
 
@@ -43,8 +43,8 @@ func launchNotification(notificationDate: Date){
     let localNotification = UNMutableNotificationContent()
     localNotification.title = "Weather forecast"
     localNotification.body = "It looks like it will rain on " + dateFormatter.string(from: notificationDate) + " ☔️"
-        
-    let chronoTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+            
+    let chronoTrigger = UNCalendarNotificationTrigger(dateMatching: makeDateTime(date: notificationDate), repeats: false)
     
     let request = UNNotificationRequest(identifier: "myNotification", content: localNotification, trigger: chronoTrigger)
     
