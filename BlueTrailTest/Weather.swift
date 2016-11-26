@@ -23,8 +23,9 @@ class WeatherForecast {
     var eve: Double
     var morn: Double
     var icon: UIImage
+    var id: Int
     
-    init(temperature: Double, min: Double, max: Double, state: String, date: Date, pressure: Double, humidity: Int, clouds: Int, speed: Double, night: Double, eve: Double, morn: Double, icon: UIImage) {
+    init(temperature: Double, min: Double, max: Double, state: String, date: Date, pressure: Double, humidity: Int, clouds: Int, speed: Double, night: Double, eve: Double, morn: Double, icon: UIImage, id: Int) {
         self.temperature = temperature
         self.min         = min
         self.max         = max
@@ -38,6 +39,7 @@ class WeatherForecast {
         self.eve         = eve
         self.morn        = morn
         self.icon        = icon
+        self.id          = id
     }
 }
 
@@ -90,6 +92,7 @@ var city = String()
                         let weather = weathers[0]
                         let description = weather["description"]
                         let icon = weather["icon"]
+                        let id = weather["id"]
                         
                         let imageData = makeURL(icon: icon as! String)
                         
@@ -98,8 +101,8 @@ var city = String()
                         
                         let mainIcon = UIImage(data: mainIconData as! Data)
                         
-                        let w = WeatherForecast(temperature: day!! as! Double, min: min!! as! Double, max: max!! as! Double, state: description! as! String, date: dateC as Date, pressure: pressure! as! Double, humidity: humidity! as! Int, clouds: clouds! as! Int, speed: speed! as! Double, night: night!! as! Double, eve: eve!! as! Double, morn: morn!! as! Double, icon: mainIcon as UIImage!)
-                        
+                        let w = WeatherForecast(temperature: day!! as! Double, min: min!! as! Double, max: max!! as! Double, state: description! as! String, date: dateC as Date, pressure: pressure! as! Double, humidity: humidity! as! Int, clouds: clouds! as! Int, speed: speed! as! Double, night: night!! as! Double, eve: eve!! as! Double, morn: morn!! as! Double, icon: mainIcon as UIImage!, id: id! as! Int)
+                                                
                         days.append(w)
                     }
                 }
