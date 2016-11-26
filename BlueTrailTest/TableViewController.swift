@@ -53,7 +53,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
             cell.backgroundColor = .clear
-            cell.backgroundColor = UIColor(white: 1, alpha: 0.6)
+            //cell.backgroundColor = UIColor(white: 1, alpha: 0.6)
         
     }
     

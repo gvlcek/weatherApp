@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
@@ -31,9 +33,10 @@ class DetailViewController: UIViewController {
     var shareWeather: UIActivityViewController!
     
     override func viewDidLoad() {
-        
-        //tableView.backgroundView = UIImageView(image: UIImage(named: "01d"))
                 
+        backgroundImage.image = UIImage(named: weatherForecast.iconID)
+         UIImageJPEGRepresentation(backgroundImage.image!, 1.0)
+        
         dateFormatter.locale = Locale.current
         dateFormatter.dateStyle = .full
         dateLabel.text = dateFormatter.string(from: weatherForecast.date)
