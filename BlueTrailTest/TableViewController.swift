@@ -24,17 +24,10 @@ class TableViewController: UITableViewController {
             }
             self.headerLabel.text = "Weather in " + city + ", " + country
             
-            
             let imageView =  UIImageView(image: UIImage(named: days[0].iconID))
             self.tableView.backgroundView = imageView
             
             imageView.contentMode = .scaleAspectFill
-            
-            /*let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
-            let blurView = UIVisualEffectView(effect: blurEffect)
-            blurView.frame = imageView.bounds
-            imageView.addSubview(blurView)*/
-            
         })
     }
     
@@ -53,8 +46,6 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
             cell.backgroundColor = .clear
-            //cell.backgroundColor = UIColor(white: 1, alpha: 0.6)
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
