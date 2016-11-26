@@ -56,6 +56,7 @@ var city = String()
             
             let redeableJSON = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as! [String : AnyObject]
             
+            //first I get the data for the Header
             if let ci = redeableJSON["city"] {
                 let co = ci["country"]
                 let name = ci["name"]
@@ -110,6 +111,7 @@ var city = String()
                     }
                 }
                 
+                //If is needed I convert the temperatures to Farenheit                
                 if (clocale != true) {
                     for i in 0..<days.count {
                         days[i].temperature = convertCtF(tcelsius: days[i].temperature)

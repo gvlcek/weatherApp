@@ -15,6 +15,7 @@ class TableViewController: UITableViewController {
     
     let apiURL = "http://api.openweathermap.org/data/2.5/forecast/daily?q=buenos%20aires&mode=json&units=metric&APPID=3d7fafd6fbae7ba96a7b3fa31bd0ce6b"
     
+    //this is where i retrieve the data from the API
     func callAlamo(url: String){
         Alamofire.request(url).responseJSON(completionHandler: {
             response in
@@ -22,18 +23,18 @@ class TableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            self.headerLabel.text = "Weather in " + city + ", " + country
             
+            //set up the header and the background
+            self.headerLabel.text = "Weather in " + city + ", " + country
             let imageView =  UIImageView(image: UIImage(named: days[0].iconID))
             self.tableView.backgroundView = imageView
-            
             imageView.contentMode = .scaleAspectFill
         })
     }
     
     override func viewDidLoad() {
+        //This is where I allow the notifications
         askPermission()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,12 +97,12 @@ class TableViewController: UITableViewController {
             let indexPath = tableView.indexPath(for: cell)
             else { return }
         
+        //BEFORE going to the ViewController I schedule the notification if the next day rains
         if indexPath[1] != 6 {
             if days[((indexPath as NSIndexPath).row) + 1 ].id < 700  /*SEE http://openweathermap.org/weather-conditions FOR DETAILS */ {
                 launchNotification(notificationDate: days[((indexPath as NSIndexPath).row) + 1 ].date)
             }
         }
-        
         let forecast: WeatherForecast = days[(indexPath as NSIndexPath).row]
         vc.weatherForecast = forecast
     }

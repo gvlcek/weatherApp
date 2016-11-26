@@ -33,9 +33,9 @@ class DetailViewController: UIViewController {
     var shareWeather: UIActivityViewController!
     
     override func viewDidLoad() {
-                
+        
+        //first I set up the background image
         backgroundImage.image = UIImage(named: weatherForecast.iconID)
-         UIImageJPEGRepresentation(backgroundImage.image!, 1.0)
         
         dateFormatter.locale = Locale.current
         dateFormatter.dateStyle = .full
