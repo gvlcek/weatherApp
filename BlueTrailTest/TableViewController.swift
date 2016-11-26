@@ -86,6 +86,12 @@ class TableViewController: UITableViewController {
             let indexPath = tableView.indexPath(for: cell)
             else { return }
         
+        if indexPath[1] != 6 {
+            if days[((indexPath as NSIndexPath).row) + 1 ].id < 700  /*SEE http://openweathermap.org/weather-conditions FOR DETAILS */ {
+                launchNotification(notificationDate: days[((indexPath as NSIndexPath).row) + 1 ].date)
+            }
+        }
+        
         let forecast: WeatherForecast = days[(indexPath as NSIndexPath).row]
         vc.weatherForecast = forecast
     }
