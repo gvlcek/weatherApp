@@ -34,8 +34,13 @@ func parseBackground(JSONData: Data) {
                 }
             }
         }
+        
+        //It's the [1] cause it checks if it will rain the next day
+        //700 it's the condition id, see openweathermap.org/weather-conditions
         if (backgroundId[1]) < 700 {
-            launchNotification()
+            let currentDate = Date()
+            //if it would rain the next day it schedules a notification that day at 8.00 am
+            launchNotification(notificationDate: currentDate.addingTimeInterval(86400))
         }
     }
     catch{
