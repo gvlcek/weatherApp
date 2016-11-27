@@ -36,24 +36,14 @@ func askPermission() {
     })
 }
 
-//Function to decompose the date and set the time at 8 am
-func makeDateTime(date: Date) -> DateComponents {
-    var dateComponents = Calendar.current.dateComponents([.day, .month, .year], from: date)
-    dateComponents.hour =  8
-    dateComponents.minute = 0
-    return dateComponents
-}
-
 //schedule the notifications
-func launchNotification(notificationDate: Date){
+func launchNotification(){
     let localNotification = UNMutableNotificationContent()
     localNotification.title = "Weather forecast"
-    localNotification.body = "It looks like it will rain on " + dateFormatter.string(from: notificationDate) + " ☔️"
-            
-    let chronoTrigger = UNCalendarNotificationTrigger(dateMatching: makeDateTime(date: notificationDate), repeats: false)
+    localNotification.body = "It looks like it will rain tomorrow ☔️"
     
+    let chronoTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
     let request = UNNotificationRequest(identifier: "myNotification", content: localNotification, trigger: chronoTrigger)
-    
     UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
         if error != nil{
         print("error")

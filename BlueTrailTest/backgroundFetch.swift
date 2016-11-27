@@ -7,7 +7,8 @@
 //
 
 import Alamofire
-import Foundation
+
+var backgroundId = [Int]()
 
 func backgroundAlamo() {
     Alamofire.request("http://api.openweathermap.org/data/2.5/forecast/daily?q=buenos%20aires&mode=json&units=metric&APPID=3d7fafd6fbae7ba96a7b3fa31bd0ce6b").responseJSON(completionHandler: {
@@ -29,14 +30,15 @@ func parseBackground(JSONData: Data) {
                 if let weathers = item["weather"] as? [[String : AnyObject]] {
                     let weather = weathers[0]
                     let id = weather["id"]
-                    
-                    print(id!)
+                    backgroundId.append(id! as! Int)
                 }
             }
+        }
+        if (backgroundId[1]) < 700 {
+            launchNotification()
         }
     }
     catch{
         print(error)
     }
-    
 }
