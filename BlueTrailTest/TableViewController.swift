@@ -7,98 +7,83 @@
 //
 
 import UIKit
-import Alamofire
+
+class WeatherCell: UITableViewCell {
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var maxTemperatureLabel: UILabel!
+    @IBOutlet weak var minTemperatureLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
+
+    static let ReuseIdentifier = "WeatherCell"
+
+    func set(forecastItem: WeatherForecast) {
+        dateFormatter.locale = Locale.current
+        dateFormatter.setLocalizedDateFormatFromTemplate("ed")
+        dateLabel.text = dateFormatter.string(from: forecastItem.date)
+        statusLabel.text = forecastItem.state
+        temperatureLabel.text = String(forecastItem.temperature) + ResponseUnits.systemUnits.suffix
+        maxTemperatureLabel.text = "Max " + String(forecastItem.max)
+        minTemperatureLabel.text = "Min " + String(forecastItem.min)
+        iconImageView.image = forecastItem.icon
+    }
+}
+
 
 class TableViewController: UITableViewController {
-    
-    @IBOutlet weak var headerLabel: UILabel!
-    
-    let apiURL = "http://api.openweathermap.org/data/2.5/forecast/daily?q=buenos%20aires&mode=json&units=metric&APPID=3d7fafd6fbae7ba96a7b3fa31bd0ce6b"
-    
-    //this is where i retrieve the data from the API
-    func callAlamo(url: String){
-        Alamofire.request(url).responseJSON(completionHandler: {
-            response in
-            parseData(JSONData: response.data!)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-            
-            //set up the header and the background
-            self.headerLabel.text = "Weather in " + city + ", " + country
-            let imageView =  UIImageView(image: UIImage(named: days[0].iconID))
-            self.tableView.backgroundView = imageView
-            imageView.contentMode = .scaleAspectFill
-        })
-    }
-    
+    var forecast: [WeatherForecast] = []
+    var city: City!
+
+    private let service: WeatherService = OpenWeatherMapService()
+
     override func viewDidLoad() {
         //This is where I allow the notifications
         askPermission()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
-        callAlamo(url: apiURL)
+        service.fetchWeather(city: "buenos aires", units: ResponseUnits.systemUnits) { [weak self] result in
+            guard let (city, forecast) = result else {
+                fatalError("no response")
+            }
+            self?.forecast = forecast
+            self?.city = city
+            DispatchQueue.main.async {
+                self?.navigationItem.title = "Weather in " + city.name + ", " + city.country
+                self?.tableView.reloadData()
+            }
+
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return days.count
+        return forecast.count
     }
 
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-            cell.backgroundColor = .clear
-    }
-    
+//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        cell.backgroundColor = .clear
+//    }
+//
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Identifier")
-        
-        let dayLabel = cell?.viewWithTag(1) as! UILabel
-        dateFormatter.locale = Locale.current
-        dateFormatter.setLocalizedDateFormatFromTemplate("ed")
-        dayLabel.text = dateFormatter.string(from: days[indexPath.row].date)
-        
-        let statusLabel = cell?.viewWithTag(3) as! UILabel
-        statusLabel.text = days[indexPath.row].state
-        
-        let tempLabel = cell?.viewWithTag(2) as! UILabel
-        if (clocale == true) {
-        tempLabel.text = String(days[indexPath.row].temperature) + "°C"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: WeatherCell.ReuseIdentifier, for: indexPath) as? WeatherCell else {
+            fatalError("not an expected cell")
         }
-        else {
-            tempLabel.text = String(format:"%.00f", days[indexPath.row].temperature) + "°F"
-        }
-        
-        let maxLabel = cell?.viewWithTag(4) as! UILabel
-        if (clocale == true) {
-            maxLabel.text = "Max " + String(days[indexPath.row].max)
-        }
-        else {
-            maxLabel.text = "Max " + String(format:"%.00f", days[indexPath.row].max)
-        }
-        
-        let minLabel = cell?.viewWithTag(5) as! UILabel
-        if (clocale == true) {
-            minLabel.text = "Min " + String(days[indexPath.row].min)
-        }
-        else {
-            minLabel.text = "Min " + String(format:"%.00f", days[indexPath.row].min)
-        }
-        
-        let iconImage = cell?.viewWithTag(6) as! UIImageView
-        iconImage.image = days[indexPath.row].icon
-        
-        return cell!
+
+        let forecastItem = forecast[indexPath.row]
+        cell.set(forecastItem: forecastItem)
+        return cell
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let
             vc = segue.destination as? DetailViewController,
             let cell = sender as? UITableViewCell,
             let indexPath = tableView.indexPath(for: cell)
             else { return }
-        
-        let forecast: WeatherForecast = days[(indexPath as NSIndexPath).row]
+
+        let forecast: WeatherForecast = self.forecast[indexPath.row]
         vc.weatherForecast = forecast
     }
-
+    
 }

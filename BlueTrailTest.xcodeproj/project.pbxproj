@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		17F735C575DBB4BF93E3E9F3 /* Pods_BlueTrailTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926874FF7F767A26B497B29A /* Pods_BlueTrailTestTests.framework */; };
 		3240B93F8A7D04105C5C94C1 /* Pods_BlueTrailTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F021EAF8AA5B0A127E0FEC69 /* Pods_BlueTrailTestUITests.framework */; };
+		35DEF5811E116F2B002D4245 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DEF5801E116F2B002D4245 /* WeatherService.swift */; };
+		35DEF5821E117514002D4245 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DEF5801E116F2B002D4245 /* WeatherService.swift */; };
+		35DEF5831E117559002D4245 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD04BF751DC2ECAF00A201F4 /* Weather.swift */; };
+		35DEF5841E117585002D4245 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD04BF731DC2E85C00A201F4 /* TableViewController.swift */; };
+		35DEF5851E117585002D4245 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD70BC6F1DD90C2B00499BCA /* DetailViewController.swift */; };
+		35DEF5861E117585002D4245 /* auxFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD70BC6D1DD8D3E300499BCA /* auxFunctions.swift */; };
+		35DEF5871E117585002D4245 /* backgroundFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1069EA1DEA613D001BB98B /* backgroundFetch.swift */; };
 		481698FC6E96656896345E3C /* Pods_BlueTrailTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8283BC16C6AA518195E7B6C1 /* Pods_BlueTrailTest.framework */; };
 		DD04BF741DC2E85C00A201F4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD04BF731DC2E85C00A201F4 /* TableViewController.swift */; };
 		DD04BF761DC2ECAF00A201F4 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD04BF751DC2ECAF00A201F4 /* Weather.swift */; };
@@ -42,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		064CF2CE5489097905550768 /* Pods-BlueTrailTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueTrailTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueTrailTestTests/Pods-BlueTrailTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		35DEF5801E116F2B002D4245 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		8283BC16C6AA518195E7B6C1 /* Pods_BlueTrailTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueTrailTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		926874FF7F767A26B497B29A /* Pods_BlueTrailTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueTrailTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD269C9873677EDF39B9D60F /* Pods-BlueTrailTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueTrailTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueTrailTestUITests/Pods-BlueTrailTestUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +163,7 @@
 				DDFCA0A71DE20F9C0023DBE7 /* Assets.xcassets */,
 				DD4DD1E41DC2DE65004640F6 /* LaunchScreen.storyboard */,
 				DD4DD1E71DC2DE65004640F6 /* Info.plist */,
+				35DEF5801E116F2B002D4245 /* WeatherService.swift */,
 			);
 			path = BlueTrailTest;
 			sourceTree = "<group>";
@@ -471,6 +480,7 @@
 				DD4DD1DC1DC2DE65004640F6 /* AppDelegate.swift in Sources */,
 				DD1069EB1DEA613D001BB98B /* backgroundFetch.swift in Sources */,
 				DD70BC6E1DD8D3E300499BCA /* auxFunctions.swift in Sources */,
+				35DEF5811E116F2B002D4245 /* WeatherService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,7 +488,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35DEF5821E117514002D4245 /* WeatherService.swift in Sources */,
+				35DEF5831E117559002D4245 /* Weather.swift in Sources */,
+				35DEF5861E117585002D4245 /* auxFunctions.swift in Sources */,
+				35DEF5851E117585002D4245 /* DetailViewController.swift in Sources */,
 				DD4DD1F11DC2DE65004640F6 /* BlueTrailTestTests.swift in Sources */,
+				35DEF5871E117585002D4245 /* backgroundFetch.swift in Sources */,
+				35DEF5841E117585002D4245 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
