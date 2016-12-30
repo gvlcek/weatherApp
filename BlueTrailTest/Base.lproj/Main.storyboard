@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uRe-vA-ZdB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uRe-vA-ZdB">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -16,17 +16,10 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="center" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="pI6-bF-9iC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather in " textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GXT-PV-BMa">
-                            <rect key="frame" x="0.0" y="64" width="320" height="41"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Identifier" rowHeight="66" id="BJY-QQ-Hw0">
-                                <rect key="frame" x="0.0" y="69" width="320" height="66"/>
+                            <tableViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" rowHeight="66" id="BJY-QQ-Hw0" customClass="WeatherCell" customModule="BlueTrailTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="BJY-QQ-Hw0" id="c15-wD-ShL">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
@@ -81,8 +74,15 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dateLabel" destination="YtW-4f-DBF" id="PBk-ut-uAE"/>
+                                    <outlet property="iconImageView" destination="gjk-ZX-CO1" id="3eC-Qh-nal"/>
+                                    <outlet property="maxTemperatureLabel" destination="nAd-Hg-lpH" id="8k5-IE-nnJ"/>
+                                    <outlet property="minTemperatureLabel" destination="epK-aq-6nj" id="wmw-ch-ckH"/>
+                                    <outlet property="statusLabel" destination="CAX-eB-Ce2" id="gSG-3z-ARK"/>
+                                    <outlet property="temperatureLabel" destination="m7O-vh-tnc" id="i01-1n-Lhg"/>
                                     <segue destination="K9z-Ns-9Db" kind="show" id="tkj-JU-7RO"/>
                                 </connections>
                             </tableViewCell>
@@ -94,9 +94,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ufC-2M-LKi"/>
-                    <connections>
-                        <outlet property="headerLabel" destination="GXT-PV-BMa" id="sxE-bv-5Y1"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMu-td-bcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

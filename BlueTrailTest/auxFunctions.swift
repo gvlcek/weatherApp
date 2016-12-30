@@ -18,7 +18,19 @@ let clocale = Locale.current.usesMetricSystem
 
 //Convert celsius to fahrenheit
 func convertCtF(tcelsius: Double) -> Double {
-    return (tcelsius * 1.8) + 32
+    return tcelsius.convertToFahrenheit()
+}
+
+extension Double {
+    func convertToCelsius() -> Double {
+        return (self - 32.0) * 5.0/9.0
+    }
+
+    func convertToFahrenheit() -> Double {
+        return (self * 1.8) + 32
+    }
+
+
 }
 
 //This is where I make the URL
